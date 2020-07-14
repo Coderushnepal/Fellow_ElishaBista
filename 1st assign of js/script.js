@@ -20,34 +20,6 @@ let empty ={};
 let arr2 =Object.entries(empty);
 
 
-
-// Question 5
-let keysAndValues=
-{
-    a: "Apple", b: "Microsoft", c: "Google"
-}
-
-let keys = Object.keys(keysAndValues);
-console.log('Keys',keys)
- let value =Object.values(keysAndValues)
- console.log('Value',value)
-  
-
-// Part b.
-
- keysAndValues =
-{
-    a: 1,b: 2, c: 3 
-}
-let elsa= Object.keys(keysAndValues);
-console.log('Keys',elsa)
-
-let bista =Object.values(keysAndValues);
-console.log('Value',bista)
-
-
-
-
 // Ques.1
 //  Write a function to render the following pattern in the console:
 // * * * * *
@@ -68,34 +40,52 @@ function render(x){
       console.log(string);
     }
   }
-  render(5);
+  render(5); 
 
   
+ 
 
-  
-  
-//   censor("The code is fourty") ➞ "The code is ******"
+// Ques.2
+//  censor("The code is fourty") ➞ "The code is ******"
 // censor("Two plus three is five") ➞ "Two plus ***** is five"
-// censor("aaaa aalet str=("The code is fourty")let str=("The code is fourty")
- function repeatNo(str){
-     if(str>4){
-         console.log('*');
-     }
-     else
-     {
-         console.log('word')
-     }
- }
- var repeat= repeatNo("The code is fourty");
-
- let str=("The code is fourty") ;
- let n;
- function  repeatStr(n,str){
-if(n>4){
-    console.log('*');
+// censor("aaaa aaaaa 1234 12345") ➞ "aaaa ***** 1234 *****"
+function censor(str) {
+  let words =str.split(" ");
+  for( let i=0; i<words.length; i++){
+    if(words[i].length>4){
+      words[i]='*'.repeat(words[i].length);
+    }
+  }
+  
+  return  words.join(' ');
 }
-else{
+console.log (censor(" This is coding"));
 
+
+
+
+// Ques.4
+function identicalFilter(arr){
+  let k=0;
+  let identical =[];
+  for(let i=0; i<arr.length; i++){
+    let repetation= new Set(arr[i]);
+    if(repetation.size===1){
+      identical[k++] = arr[i];
+    }
+  }
+  return identical;
 }
- } 
- repeatStr(4,"The code is fourty");
+console.log(identicalFilter(["888", "123","999"]));
+
+// Ques.5
+function keysAndValues(data){
+  var keys = Object.keys(data),
+      values = keys.map(function (key) {
+          return data[key];
+      });
+  
+  return [keys, values]; 
+}
+
+console.log(keysAndValues({k: 11, l: 12, m: 13}));
