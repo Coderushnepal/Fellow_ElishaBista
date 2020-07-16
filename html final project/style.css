@@ -47,21 +47,91 @@ ul{
 a{
     text-decoration: none;
 }
-.banner{
-    background-image: url("img/male.png");
-    background-color: #fff;
-    height: 600px;
-    background-position: center;
-    background-repeat: no-repeat;
- 
+.header-banner-section {
+    display: block;
+    margin: auto;
+  
 }
-.banner h1{
+.header-banner-section h1 {
     color: #003CA6;
     font-family: Arial;
-    font-size: 34px;
+    font-size: 30px;
+    line-height: 40px;
     text-align: center;
-  
+    padding: 18px;
+    
+}
+.header-banner-section p {
+    text-align: center;
+    padding-left: 55px;
+    font-family: Arciform Sans;
+    font-size: 15.5px;
+    line-height: 16px;
+    color: #6E3628;
+    padding: 20px;
+   
+}
+.banner-img {
+    background-image: url(img/man1.png);
+    background-size: cover;
+    background-position: center;
+    height: 380px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+}
+.banner-img  h1{
+    display: none;
+}
+.banner-img p{
+    display: none;
+}
+.social-media-desktop i{
+    display: none;
+}
+.social-media {
+    width: 35%;
+    margin:auto;
+    
+}
+.facebook,
+.instagram {
+font-size: 40px;
+text-align: center;
+/* margin-bottom: 20px;
+margin-top: 20px; */
+margin: auto;
 
+
+}
+
+
+.facebook {
+    color: blue;
+    padding-left: 50px;
+    float: left;
+    padding: 20px;
+}
+
+
+.instagram {
+    color: rgb(255, 66, 176);
+    padding-right: 50px;
+    float: left;
+    padding: 20px;
+}
+.app-playstore-btn {
+    margin: auto;
+    width: 50%;
+}
+.google-playstore-btn {
+    float: left;
+    margin: 20px;
+    width: 100%;
+    padding: 30px;
+}
+.clear-header {
+    clear: both;
 }
 /* .banner-text{
     text-align: center;
@@ -70,7 +140,6 @@ a{
   left: 50%;
   transform: translate(-50%, -50%);
   color: #003CA6;
-
 } */
 
 .carwash{
@@ -92,9 +161,18 @@ text-align: center;
 }
 .col{
     width: 50%;
-    float: left;
-    padding:10px 15px;
+    float: left; 
+   
   
+}
+.col p{
+    
+font-family: Arciform Sans;
+font-size: 16px;
+line-height: 18px;
+
+/* Blue */
+color: #003CA6;
 }
 
 .abc{
@@ -182,21 +260,7 @@ hright i{
 }
 
 
-.dropdown .dropdown-options li a  {
-    font-size: 13px;
-    /* margin-top: -50px; */
-    color: #003CA6;
-    padding:10px;
-    color: rgb(15, 15, 15);
-    font-weight: bold;
-    text-align: center;  
-    /* position: relative; */
-}
 
-.dropdown-options{
-    border: 1px solid white;
-    
-}
 
 
 /* .dropdown:hover .dropbtn {
@@ -307,8 +371,6 @@ color: #131212;
     position: absolute;
     top: 0px;
     right: 0px;
-
-
 } */
 .fa{
     cursor: pointer;
@@ -358,6 +420,16 @@ display: block;
     .container{
         width: 768px;
     }
+    .banner-img {
+        background-image: url(img/man1.png);
+        background-size: cover;
+        background-position: center;
+        height: 510px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        background-repeat: no-repeat;
+    
+    }
     
     .col{
         width: 22%;
@@ -368,7 +440,7 @@ display: block;
         
     }
     .col img{
-        width: 50%;
+        width: 26%;
        
        
     }
@@ -393,6 +465,9 @@ display: block;
     .fa{
         margin-left: 60px;
     }
+    .banner-img{
+        height:505px;
+    }
     
 }
 @media screen and (min-width:1200px){
@@ -406,6 +481,83 @@ display: block;
     .hright ul {
         display: block;
      }
+    .header-banner-section {
+        display: block;
+        margin: auto;
+    }
+    .header-banner-section h1 {
+        color:#003CA6;
+        font-family: Arial;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        padding:18px;
+    }
+    .header-banner-section p {
+   
+        text-align: center;
+        /* padding-left: 55px; */
+        font-family: Arciform Sans;
+        font-size: 15.5px;
+        line-height: 16px;
+        color: #6E3628;
+        padding: 20px;
+    }
+    
+    .banner-img {
+        background-image: url(img/topbanner.png);
+        background-size: cover;
+        background-position: center;
+        height: 750px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        background-repeat: no-repeat;
+    
+    }
+
+    .banner-img h1{
+        display: none;
+       }
+       .banner-img p{
+           display: none;
+       }
+       
+       .social-media-desktop {
+        display: none;
+     }
+     .social-media {
+        width: 35%;
+        margin:auto;
+        
+    }
+    .facebook,
+    .instagram {
+    font-size: 40px;
+    text-align: center;
+    /* margin-bottom: 20px;
+    margin-top: 20px; */
+    margin: auto;
+    
+    
+    }
+    .facebook {
+        color: blue;
+        /* padding-left: 50px; */
+        float: left;
+        padding: 20px;
+    
+       
+    }
+    .instagram {
+        color: rgb(255, 66, 176);
+        padding-right: 50px;
+        float: left;
+        padding: 20px;
+       
+    }
+
+
+
      .col{
          width: 14%;
          margin-top: 20px;
@@ -416,7 +568,7 @@ display: block;
 
      }
     .cleft {
-       width:50%;
+       width:60%;
     }
 
 .abc{
@@ -425,7 +577,7 @@ display: block;
 }
 .cright
 {
-    width:47%;
+    width:37%;
 }
 .cright img{
     display: block;
@@ -466,4 +618,3 @@ display: block;
      
 
 }
-
