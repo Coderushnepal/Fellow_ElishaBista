@@ -112,6 +112,9 @@ margin: auto;
     float: left;
     padding: 20px;
 }
+.fa-instagram{
+    color: rgb(255, 66, 176);
+}
 
 
 .instagram {
@@ -126,7 +129,7 @@ margin: auto;
 }
 .google-playstore-btn {
     float: left;
-    margin: 20px;
+    margin: ;
     width: 100%;
     padding: 30px;
 }
@@ -143,6 +146,9 @@ margin: auto;
 } */
 .right-menu i{
     display: block;
+}
+.right-menu {
+    display: inline;
 }
 .carwash{
     padding: 10px 0px;
@@ -168,7 +174,7 @@ text-align: center;
   
 }
 .col p{
-    
+  margin-top: 30px;  
 font-family: Arciform Sans;
 font-size: 16px;
 line-height: 18px;
@@ -354,6 +360,7 @@ text-align: center;
  } 
  .text{
      padding: 30px 0px;
+    
  }
  .text h2{
     font-family: Arial;
@@ -484,9 +491,13 @@ color: #131212;
 
 
 }
+/* .queriestop .ans:last-child{
+width: 719px;
+} */
+/* 
 .ans :last-child{
     display: none;
-}
+} */
 .footer{
     background-color:  #003CA6;
     position: relative;
@@ -525,30 +536,34 @@ color: #131212;
     margin-top: 24px;
 }
 .right-menu{
-    position: relative;
-    display: inline-block;
+    margin: 20px;
+    display: inline;
     float: right;
 }
 .dropdown-menu{
+   
     display: none;
     position: absolute;
     /* visibility: hidden;
     opacity: 0; */
-    top: 0px;
+    top: 100px;
     right: 0px;
     background: #f9f9f9;
-    min-width: 260px;
+    width: 100%;
     /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
 }
 .dropdown-menu a {
-    color: black;
+    color: #003CA6;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-family: Arciform Sans;
+font-size: 20px;
+line-height: 16px;
   }
 .dropdown-menu a:hover{
-    background-color: #ff11ff;
+    background-color: #ddd;;
 }
 .right-menu:hover  .dropdown-menu
 {
@@ -557,9 +572,61 @@ display: block;
 .right-menu:hover .fa{
     background:#3e8e41;
 }
+.queriestop i:hover .ans{
+    display: block;
+}
+.social-media-phone{
+    margin: auto;
+}
+.header-playstore-btn{
+    margin: auto;
+}
 
+/* Queries section on mobile */
 
-
+.qna-section {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 70%;
+    /* text-align: center; */
+    /* float: left; */
+    margin-left: 10px;
+    }
+    .qna-section h3{
+        font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 37px;
+    text-align: center;
+    color: #003CA6
+    ;}.ques {
+        font-family: Arciform Sans;
+    font-size: 18px;
+    line-height: 20px;
+    color: #003CA6
+    ;}
+    /* .clear-qna {
+        clear: both;
+    } */
+    .details-of-qna li p {
+        font-family: Arciform Sans;
+    font-size: 16px;
+    line-height: 16px;
+    color: #131212
+    ;
+    }
+    .chev-down {
+        font-size: 20px;
+    }.dropdown-qna {
+        visibility: hidden;
+        display: none;
+    }
+    .dropdown-qna:hover {
+        display: block;
+        font-size: larger;
+    }
 
 
 
@@ -581,7 +648,29 @@ display: block;
     .pool-bgimg{
         background-image: url(img/Component-mob.png);
     }
+    .header-playstore-btn{
+        margin: auto;
+    }
     
+    .fa-facebook {
+        color: blue;
+        padding-left: 50px;
+        float: left;
+        padding: 20px;
+    }
+    .fa-instagram {
+        color: rgb(255, 66, 176);
+        padding-right: 50px;
+        float: left;
+        padding: 20px;
+    }
+    .fa-facebook, .fa-instagram {
+        font-size: 40px;
+        text-align: center;
+        /* margin-bottom: 20px;
+        margin-top: 20px; */
+        margin: auto;
+    }
     .col{
         width: 22%;
        margin-left:5px;
@@ -619,7 +708,17 @@ display: block;
     .banner-img{
         height:505px;
     }
-    
+    .social-media-phone{
+        margin: auto;
+    }
+    /* Qna section in tablet */
+    .qna-section {
+        /* margin-left: 122px; */
+        margin-bottom: 30px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        /* float: left; */        }  
 }
 @media screen and (min-width:1200px){
     .container{
@@ -638,6 +737,7 @@ display: block;
     .header-banner-section {
         display: block;
         margin: auto;
+        position: relative;
     }
     .header-banner-section h1 {
         color:#003CA6;
@@ -668,58 +768,68 @@ display: block;
         background-repeat: no-repeat;
     
     }
-
-    .banner-img h1{
+.banner-img h1{
+    display: none;
+   }
+   .banner-img p{
+       display: none;
+   }
+    .social-media-desktop{
         display: none;
-       }
-       .banner-img p{
-           display: none;
-       }
-       
-       .social-media-desktop {
-        display: none;
-     }
-     .social-media {
-        width: 35%;
-        margin:auto;
-        
     }
-    .facebook,
-    .instagram {
-    font-size: 40px;
-    text-align: center;
-    /* margin-bottom: 20px;
-    margin-top: 20px; */
-    margin: auto;
+ /* .social-media {
+     width: 35%;
+     margin:auto;
+     
+ } */
+ .social-media-phone {
+     margin-left: auto;
+     margin-right: auto;
+ 
+ }
+ .fa-facebook,
+ .fa-instagram {
+ font-size: 40px;
+ text-align: center;
+ /* margin-bottom: 20px;
+ margin-top: 20px; */
+ margin: auto;
+ 
+ 
+ }
+ .fa-facebook {
+     color: blue;
+     /* padding-left: 50px; */
+     float: left;
+     padding: 20px;
+     position: absolute;
+     top: 474px;
+     right: 151px;
+ 
     
+ }
+ .fa-instagram {
+     color: rgb(255, 66, 176);
+     padding-right: 50px;
+     float: left;
+     padding: 20px;
+     position: absolute;
+     top: 547px;
+     right: 151px;
     
-    }
-    .facebook {
-        color: blue;
-        /* padding-left: 50px; */
-        float: left;
-        padding: 20px;
-        position: absolute;
-left: 84.86%;
-right: 9.03%;
-top: 598px;
-    
-       
-    }
-    .instagram {
-        color: rgb(255, 66, 176);
-        padding-right: 50px;
-        float: left;
-        padding: 20px;
-       
-        position: absolute;
-        left: 84.86%;
-        right: 9.03%;
-        top: 652px;
-          
-       
-    }
-
+ }
+ 
+ .header-playstore-btn {
+    margin-left: 6px;
+     margin-right: auto;
+     margin-bottom:10px;
+ }
+ 
+ 
+ .clear-header {
+     clear: both;
+ }
+ 
 
 
 
@@ -728,6 +838,7 @@ top: 598px;
          margin-top: 20px;
          margin: 20px 30px;
      }
+     
      .col img{
          width:65%;
 
@@ -758,6 +869,7 @@ top: 598px;
 }
 .text{
     margin-left: 195px;
+    margin: auto;
 }
 .fleft{
     width: 50%;
@@ -876,6 +988,39 @@ margin-left: 10px;    }
     /* margin-top: 140px; */
     margin-right:185px;
  }
+ .ques-left p{
+     position: relative;
+ }
+ .icon-right i{
+   position: absolute;
+   left: 456px; 
+   top: 41px; 
+ }
+ .dropdown-menu{
+   
+ 
+    width: 40%;
+    margin-top: -35px;
+    width: 43%;
+ }
+
+ .dropdown-menu a:hover {
+    background:none;
+}
+/* Qna.section in desktop */
+.qna-section {
+  
+    margin-left: 8px;
+    margin-bottom: 30px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    /* float: left; */    
+    }
+    .details-of-qna li p:last-child{
+        width: 60%;
+       
+    }
 }
 
 
