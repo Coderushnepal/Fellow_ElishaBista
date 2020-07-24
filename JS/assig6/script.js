@@ -8,7 +8,12 @@ function create(){
     let wh = `${randNum(5, 70)}px`;
     let ball = document.createElement("div");
     ball.className = "balls";
+<<<<<<< HEAD
     ball.style.animationDelay = `${delay}ms`; //template literal
+=======
+    ball.style.animationDelay = `${delay}ms`;
+    // ball.style.animation = "fall 4s linear forwards";
+>>>>>>> 920600fb522881c3947252033e514bf1c433af03
     ball.style.height = wh;
     ball.style.width = wh;
     ball.style.borderRadius = "50%";
@@ -18,7 +23,11 @@ function create(){
     ball.style.backgroundColor = colors[randNum(0, 6)];
     main.append(ball);
 }
+<<<<<<< HEAD
 function randNum(min, max){
+=======
+function randNum(max, min){
+>>>>>>> 920600fb522881c3947252033e514bf1c433af03
     return Math.round(Math.random()*(max-min)+min);
 }
 for(let i=0; i<15; i++){
