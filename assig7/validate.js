@@ -40,15 +40,14 @@ function validateForm(){
         }
     }
     function confirmPassword(){
-        if(pwd.value!=passConfirm.value){
-            // error.style.visibility="visible";  
-            alert("password didnot match");
-       error.style.visibility="visible";
-        }
-        else{
-            error.style.visibility="hidden";
-        }
+        if(passConfirm.value==pwd.value){ 
+           
+            error.style.visibility="visible";   
+                  }     
+                  
+    else{error.style.visibility="hidden";        }    
     }
+
     username();
     password();
 };

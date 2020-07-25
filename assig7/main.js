@@ -10,5 +10,4 @@ box.style.boxShadow="2px 2px 2px 2px grey";
 // box.style.backgroundColor="blue";
 box.style.position="absolute";
 
-box.style.width="400px";
 box.setAttribute("border","2px solid #000");
