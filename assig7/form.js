@@ -39,8 +39,8 @@ function form(){
       error_message.style.color="red";
      createform.appendChild(error_message);
 
-      
-
+     //--------------------------------------------------------------- 
+     //For Email
       
 
       var emaillabel=document.createElement('label');
@@ -74,7 +74,7 @@ function form(){
 
       // var linebreak=document.createElement('br');
       // createform.appendChild(linebreak);
-
+//---------------------------------------------------------------------------------
     //For password 
       var passwordlabel=document.createElement('label');
      passwordlabel.innerHTML="Password";
@@ -141,6 +141,7 @@ function form(){
       btn.id = "submitBtn";
       btn.type= "submit";
       btn.innerText = "Submit";
+    //  btn.style.background="blue";
       createform.append(btn);
       // var submit=document.createElement("input");
       // submit.setAttribute("type","submit");
