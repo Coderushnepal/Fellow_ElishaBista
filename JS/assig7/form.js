@@ -2,13 +2,13 @@
 function form(){
     var x=document.getElementById("form");
     var createform=document.createElement("form");//Creating the new element form
-    createform.setAttribute("action","");
+    createform.setAttribute("action"," ");
     createform.setAttribute("name","myForm");
     createform.setAttribute("method","post");
     createform.setAttribute("onsubmit","validateForm()");
     x.appendChild(createform);
 
-    var heading=document.createElement('h1');//heading of form
+    var heading=document.createElement('h2');//heading of form
     heading.innerHTML="Register with us";
     createform.appendChild(heading);
 
@@ -31,10 +31,14 @@ function form(){
       
       
       createform.appendChild(inputelement);
+
+      var linebreak=document.createElement('br');
+      createform.appendChild(linebreak);
+        
       
       var error_message=document.createElement("p");
       error_message.innerHTML="Name is required and length>3";
-      error_message.style.visibility="hidden";
+      error_message.style.display="none";
       error_message.id="userError";
       error_message.style.color="red";
      createform.appendChild(error_message);
@@ -42,6 +46,8 @@ function form(){
      //--------------------------------------------------------------- 
      //For Email
       
+     var linebreak=document.createElement('br');
+     createform.appendChild(linebreak);
 
       var emaillabel=document.createElement('label');
       emaillabel.innerHTML="Email";
@@ -62,18 +68,18 @@ function form(){
 
       var error_message=document.createElement("p");
       error_message.innerHTML="valid email is required";
-      error_message.style.visibility="hidden";
+      error_message.style.display="none";
       error_message.style.color="red";
       error_message.id="emailError";
      createform.appendChild(error_message);
 
 
-      // var linebreak=document.createElement('br');
-      // createform.appendChild(linebreak);
+      var linebreak=document.createElement('br');
+      createform.appendChild(linebreak);
 
 
-      // var linebreak=document.createElement('br');
-      // createform.appendChild(linebreak);
+      var linebreak=document.createElement('br');
+      createform.appendChild(linebreak);
 //---------------------------------------------------------------------------------
     //For password 
       var passwordlabel=document.createElement('label');
@@ -95,13 +101,17 @@ function form(){
       var error_message=document.createElement("p");
       error_message.id = "passwordError"
       error_message.innerHTML="length>6 and is required";
-      error_message.style.visibility="hidden";
+      error_message.style.display="none";
       error_message.style.color="red";
      createform.appendChild(error_message);
 
 //-----------------------------------------------------------------------------
 
      //For Confirm Password
+     var linebreak=document.createElement('br');
+     createform.appendChild(linebreak);
+     var linebreak=document.createElement('br');
+     createform.appendChild(linebreak);
 
 
       var confirmpasswordlabel=document.createElement('label');
@@ -123,23 +133,29 @@ function form(){
 
       var error_message=document.createElement("p");
       error_message.innerHTML="Should be equal";
-      error_message.style.visibility="hidden";
+      error_message.style.display="none";
       error_message.id="errorMess";
       error_message.style.color="red";
      createform.appendChild(error_message);
 
 
 
-      // var linebreak=document.createElement('br');
-      // createform.appendChild(linebreak);
+      var linebreak=document.createElement('br');
+      createform.appendChild(linebreak);
 
 
-      // var linebreak=document.createElement('br');
-      // createform.appendChild(linebreak);
+      var linebreak=document.createElement('br');
+      createform.appendChild(linebreak);
 
       let btn = document.createElement("button");
       btn.id = "submitBtn";
       btn.type= "submit";
+      btn.style.width= "100%";
+      btn.style.color="#fff";
+      btn.style.padding="10px 0px";
+      btn.style.borderRadius="5px";
+      btn.style.border= "rgb(7, 138, 253)";
+      btn.style.backgroundColor= "rgb(7, 138, 253)";
       btn.innerText = "Submit";
     //  btn.style.background="blue";
       createform.append(btn);

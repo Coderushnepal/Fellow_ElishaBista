@@ -3,61 +3,116 @@ function validateForm(){
     const errorPass = document.getElementById("passwordError");
     const fname = document.getElementById("fname"); 
     const userError= document.getElementById("userError");    
-//     const email=document.getElementById("email");
-//    const emailError=document.getElementById("emailError");
+    const emaill=document.getElementById("email");
+   const emailErrorr=document.getElementById("emailError");
     const passConfirm=document.getElementById("pwdConfirm");
     const error=document.getElementById("errorMess");
     function username(){
             if(fname.value==""||fname.value.length<3){       
-                userError.style.visibility="visible"; 
+                userError.style.display="block"; 
                 fname.style.border="2px solid red";
                    fname.style.borderRadius="5px";
                
             }
             else {
-                userError.style.visibility="hidden"; 
+                userError.style.display="none"; 
                   fname.style.border="2px solid green";
                     fname.style.borderRadius="5px";          
                 
             }
         }
-    //  function email(){
-    //      if(email.value==""){
-    //         emailError.style.visibility="visible"; 
-    //      }
-    //      else{
-    //           emailError.style.visibility="none"; 
-    //      }
-    //  }
+        function emailValid(){
+            if(emaill.value==""){
+                emailErrorr.style.display="block";
+                emaill.style.border="2px solid red";
+                   emaill.style.borderRadius="5px";  
+            }
+            else{
+                emailErrorr.style.display="none";
+                emaill.style.border="2px solid green";
+                   emaill.style.borderRadius="5px"; 
+                 
+            }
+        }
 
+
+        // if(emailValue === '') 
+
+        // {
+
+                              
+
+        //     errorEmail.style.visibility = "visible";  
+
+                
+
+        // } 
+
+        // else if(!isEmail(emailValue)) {
+
+                              
+
+        //     errorEmail.style.visibility = "visible";  
+
+                
+
+        // }
+
+        // else 
+
+        // {
+
+                                    
+
+        //     errorEmail.style.visibility = "hidden";   
+
+                
+
+        // }
+
+        // function isEmail(email) 
+
+        // {
+
+        //     return /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email);
+
+        // }
+
+
+        
+        
+    
     function password(){
         if(pwd.value.length<6){
-            errorPass.style.visibility="visible";  
+            errorPass.style.display="block";  
              pwd.style.border="2px solid red";
                    pwd.style.borderRadius="5px";   
         }
         else{
-            errorPass.style.visibility="hidden";
+            errorPass.style.display="none";
               pwd.style.border="2px solid green";
                    pwd.style.borderRadius="5px";   
         }
     }
     function confirmPassword(){
-        if(passConfirm.value==pwd.value){ 
+        if(passConfirm.value==pwd.value && passConfirm.value!=""){ 
            
-            error.style.visibility="hidden";  
+            error.style.display="none";  
                   passConfirm.style.borderRadius="5px"; 
                   passConfirm.style.border="2px solid green";   
                   }     
-                  
+            
     else
-    {error.style.visibility="visible"; 
+    {error.style.display="block"; 
       passConfirm.style.border="2px solid red";
      passConfirm.style.borderRadius="5px";          }    
     }
+   
+
 
     username();
     password();
-    // email();
+    // isEmail();
+    emailValid();
     confirmPassword();
 };
