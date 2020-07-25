@@ -1,20 +1,21 @@
+
 function form(){
     var x=document.getElementById("form");
     var createform=document.createElement("form");//Creating the new element form
     createform.setAttribute("action","");
     createform.setAttribute("name","myForm");
     createform.setAttribute("method","post");
-    createform.setAttribute("onsubmit","return validatForm();");
+    createform.setAttribute("onsubmit","validateForm()");
     x.appendChild(createform);
 
     var heading=document.createElement('h1');//heading of form
     heading.innerHTML="Register with us";
     createform.appendChild(heading);
 
-    var linebreak=document.createElement('br');
-    createform.appendChild(linebreak);
+    // var linebreak=document.createElement('br');
+    // createform.appendChild(linebreak);
 
-   
+   //For UserName
     var namelabel=document.createElement('label');//Create label for name label
       namelabel.innerHTML="Username";
       createform.appendChild(namelabel);
@@ -33,15 +34,13 @@ function form(){
       
       var error_message=document.createElement("p");
       error_message.innerHTML="Name is required and length>3";
-      error_message.style.display="none";
+      error_message.style.visibility="hidden";
+      error_message.id="userError";
       error_message.style.color="red";
      createform.appendChild(error_message);
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
+      
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
       
 
       var emaillabel=document.createElement('label');
@@ -55,25 +54,28 @@ function form(){
       var emailelement=document.createElement('input');
       emailelement.setAttribute("type","email");
       emailelement.setAttribute("name","email");
+      emailelement.setAttribute("id","email");
+   
       emailelement.setAttribute("placeholder","Enter email");
       createform.appendChild(emailelement);
 
 
       var error_message=document.createElement("p");
       error_message.innerHTML="valid email is required";
-      error_message.style.display="none";
+      error_message.style.visibility="hidden";
       error_message.style.color="red";
+      error_message.id="emailError";
      createform.appendChild(error_message);
 
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
+      // var linebreak=document.createElement('br');
+      // createform.appendChild(linebreak);
 
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
+      // var linebreak=document.createElement('br');
+      // createform.appendChild(linebreak);
 
-
+    //For password 
       var passwordlabel=document.createElement('label');
      passwordlabel.innerHTML="Password";
       createform.appendChild(passwordlabel);
@@ -91,19 +93,15 @@ function form(){
       createform.appendChild(passwordelement);
 
       var error_message=document.createElement("p");
+      error_message.id = "passwordError"
       error_message.innerHTML="length>6 and is required";
-      error_message.style.display="none";
+      error_message.style.visibility="hidden";
       error_message.style.color="red";
      createform.appendChild(error_message);
 
 
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
 
-
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
 
 
       var confirmpasswordlabel=document.createElement('label');
@@ -118,61 +116,48 @@ function form(){
       var passwordelement=document.createElement('input');
      passwordelement.setAttribute("type","password");
       passwordelement.setAttribute("name","pwd");
+      passwordelement.setAttribute("id","pwdConfirm");
       passwordelement.setAttribute("placeholder","Enter Password again");
       createform.appendChild(passwordelement);
 
 
       var error_message=document.createElement("p");
       error_message.innerHTML="Should be equal";
-      error_message.style.display="none";
+      error_message.style.visibility="hidden";
+      error_message.id="errorMess";
       error_message.style.color="red";
      createform.appendChild(error_message);
 
 
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
+      // var linebreak=document.createElement('br');
+      // createform.appendChild(linebreak);
 
 
-      var linebreak=document.createElement('br');
-      createform.appendChild(linebreak);
+      // var linebreak=document.createElement('br');
+      // createform.appendChild(linebreak);
 
-      var submit=document.createElement("input");
-      submit.setAttribute("type","submit");
-      submit.setAttribute("name","submit");
-      submit.setAttribute("value","submit");
-      var onsubmit=addEventListener("click",function(){
-          return validatForm();
-      })
-      createform.appendChild(submit);
+      let btn = document.createElement("button");
+      btn.id = "submitBtn";
+      btn.type= "submit";
+      btn.innerText = "Submit";
+      createform.append(btn);
+      // var submit=document.createElement("input");
+      // submit.setAttribute("type","submit");
+      // submit.setAttribute("name","submit");
+      // submit.setAttribute("value","submit");
+      // submit.setAttribute("onclick", "validateForm()");
+      // var onsubmit=addEventListener("click",function(){
+      //     return validateForm();
+      // })
+      // createform.appendChild(submit);
     }
     form();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
+    main.addEventListener("click", function(e){
+      if(e.target.id=="submitBtn")
+      validateForm();
+      event.preventDefault();
+    })
