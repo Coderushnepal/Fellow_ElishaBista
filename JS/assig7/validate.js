@@ -3,48 +3,61 @@ function validateForm(){
     const errorPass = document.getElementById("passwordError");
     const fname = document.getElementById("fname"); 
     const userError= document.getElementById("userError");    
-    
-    var email=document.getElementById("email");
-    var emailConfirm=document.getElementById("emailConfirm");
-  
-    const cPwd = document.getElementById("")
+//     const email=document.getElementById("email");
+//    const emailError=document.getElementById("emailError");
+    const passConfirm=document.getElementById("pwdConfirm");
+    const error=document.getElementById("errorMess");
     function username(){
-            if(fname.value!=""||fname.value.length>3){       
-                userError.style.visibility="hidden";     
+            if(fname.value==""||fname.value.length<3){       
+                userError.style.visibility="visible"; 
+                fname.style.border="2px solid red";
+                   fname.style.borderRadius="5px";
+               
             }
             else {
-                userError.style.visibility="visible";           
+                userError.style.visibility="hidden"; 
+                  fname.style.border="2px solid green";
+                    fname.style.borderRadius="5px";          
                 
             }
         }
-    
+    //  function email(){
+    //      if(email.value==""){
+    //         emailError.style.visibility="visible"; 
+    //      }
+    //      else{
+    //           emailError.style.visibility="none"; 
+    //      }
+    //  }
 
-
-          
-    // function email(){
-    //     if(email.value.length<6){
-    //         emailError.style.visibility="visible";     
-    //     }
-    //     else{
-    //         emailError.style.visibility="hidden";
-    //     }
-    // }
     function password(){
         if(pwd.value.length<6){
-            errorPass.style.visibility="visible";     
+            errorPass.style.visibility="visible";  
+             pwd.style.border="2px solid red";
+                   pwd.style.borderRadius="5px";   
         }
         else{
             errorPass.style.visibility="hidden";
+              pwd.style.border="2px solid green";
+                   pwd.style.borderRadius="5px";   
         }
     }
     function confirmPassword(){
-        if(emailConfirm.value==pwd.value){
-            errormess.style.visibility="visible";     
-        }
-        else{
-            errormess.style.visibility="hidden";
-        }
+        if(passConfirm.value==pwd.value){ 
+           
+            error.style.visibility="hidden";  
+                  passConfirm.style.borderRadius="5px"; 
+                  passConfirm.style.border="2px solid green";   
+                  }     
+                  
+    else
+    {error.style.visibility="visible"; 
+      passConfirm.style.border="2px solid red";
+     passConfirm.style.borderRadius="5px";          }    
     }
+
     username();
     password();
+    // email();
+    confirmPassword();
 };
