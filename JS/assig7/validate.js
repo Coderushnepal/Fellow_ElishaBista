@@ -3,8 +3,8 @@ function validateForm(){
     const errorPass = document.getElementById("passwordError");
     const fname = document.getElementById("fname"); 
     const userError= document.getElementById("userError");    
-    const emaill=document.getElementById("email");
-   const emailErrorr=document.getElementById("emailError");
+    const emailValue=document.getElementById("email");
+   const  errorEmail=document.getElementById("emailError");
     const passConfirm=document.getElementById("pwdConfirm");
     const error=document.getElementById("errorMess");
     function username(){
@@ -21,62 +21,66 @@ function validateForm(){
                 
             }
         }
-        function emailValid(){
-            if(emaill.value==""){
-                emailErrorr.style.display="block";
-                emaill.style.border="2px solid red";
-                   emaill.style.borderRadius="5px";  
-            }
-            else{
-                emailErrorr.style.display="none";
-                emaill.style.border="2px solid green";
-                   emaill.style.borderRadius="5px"; 
+        // function emailValid(){
+        //     if(emaill.value==""){
+        //         emailErrorr.style.display="block";
+        //         emaill.style.border="2px solid red";
+        //            emaill.style.borderRadius="5px";  
+        //     }
+        //     else{
+        //         emailErrorr.style.display="none";
+        //         emaill.style.border="2px solid green";
+        //            emaill.style.borderRadius="5px"; 
                  
-            }
+        //     }
+        // }
+
+
+        if(emailValue === '') 
+
+        {
+
+                              
+
+            errorEmail.style.visibility = "visible";
+            emailValue.style.border="2px solid green";    
+              
+
+                
+
         }
 
+        else if(!isEmail(emailValue)) {
+           
 
-        // if(emailValue === '') 
-
-        // {
-
-                              
-
-        //     errorEmail.style.visibility = "visible";  
-
-                
-
-        // } 
-
-        // else if(!isEmail(emailValue)) {
-
-                              
-
-        //     errorEmail.style.visibility = "visible";  
+            errorEmail.style.visibility = "visible";
+            emailValue.style.borderRadius="5px";  
+           
+            emailValue.style.border="2px solid red";     
 
                 
 
-        // }
+        }
 
-        // else 
+        else 
 
-        // {
-
+        {
+            // errorEmail.style.visibility = "hidden"; 
+            // emailValue.style.border="2px solid green";    
                                     
-
-        //     errorEmail.style.visibility = "hidden";   
+            // emailValue.style.border="2px solid green"; 
 
                 
 
-        // }
+        }
 
-        // function isEmail(email) 
+        function isEmail(email) 
 
-        // {
+        {
 
-        //     return /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email);
+            return /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email);
 
-        // }
+        }
 
 
         
@@ -112,7 +116,7 @@ function validateForm(){
 
     username();
     password();
-    // isEmail();
-    emailValid();
+    isEmail(emailValue);
+    // emailValid();
     confirmPassword();
 };

@@ -2,9 +2,9 @@
 function form(){
     var x=document.getElementById("form");
     var createform=document.createElement("form");//Creating the new element form
-    createform.setAttribute("action"," ");
+    createform.setAttribute("action","");
     createform.setAttribute("name","myForm");
-    createform.setAttribute("method","post");
+    createform.setAttribute("method","");
     createform.setAttribute("onsubmit","validateForm()");
     x.appendChild(createform);
 
@@ -175,6 +175,8 @@ function form(){
 
     main.addEventListener("click", function(e){
       if(e.target.id=="submitBtn")
+     
+  
       validateForm();
       event.preventDefault();
     })
