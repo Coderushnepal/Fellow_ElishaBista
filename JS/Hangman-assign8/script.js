@@ -25,13 +25,17 @@ var words=["January","Sunday","Mango","Rainy","Hello","CSIT","Science","Winter",
     dash.style.borderBottom="5px solid #fff";
     dash.style.width="30px";
     dash.classList="dashWord";
+    dash.id="dash";
     dash.style.height="50px";
     
     // dash.style.marginTop="100px";
   
     dash.style.display = "inline-block";
     dash.style.marginLeft="15px";
-    document.body.appendChild(dash);
+   box.appendChild(dash);
   
 
  }
+document.body.addEventListener("click",function(e){
+   if(e.target.id=="dash")
+})
