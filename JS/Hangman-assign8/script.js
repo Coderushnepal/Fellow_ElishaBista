@@ -36,6 +36,40 @@ var words=["January","Sunday","Mango","Rainy","Hello","CSIT","Science","Winter",
   
 
  }
-document.body.addEventListener("click",function(e){
-   if(e.target.id=="dash")
-})
+
+//  var remainingLetters=word.length;
+//  while(remainingLetters>0){
+//     alert(dashWord.join(" "));
+//  }
+//  var guess=prompt("Guess a letter");
+var letters = document.querySelectorAll('.dashWord');
+document.body.addEventListener("keydown",function(e){
+
+   // if(e.target.id=="dash")
+
+   for(var j=0;j<splitWords.length;j++){
+      if(splitWords[j]===e.key){
+         letters[j].innerHTML=e.key;
+      }
+      else{
+
+      }
+   }
+   // if(guess==null){
+   //    break;
+   // }
+   // else if(guess.length!==1){
+   //    alert("please Enter a single letter");
+   // }
+   // else{
+   //    for(var j=0;j<splitWords.length;j++){
+   //       //If the letter player guess is in the word at that point or index
+   //       if(splitWords[j]===guess){
+   //          dashWord[j]=guess;
+   //         //Substracts one letter form the remaining letter
+   //         remainingLetters--; 
+   //       }
+   //    }
+   // }
+   
+});
