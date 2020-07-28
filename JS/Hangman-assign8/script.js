@@ -23,6 +23,8 @@ var words=["January","Sunday","Mango","Rainy","Hello","CSIT","Science","Winter",
 //wrong  letters display
 var wrongDiv=document.createElement("div");
 wrongDiv.classList.add("wrongDiv");
+wrongDiv.style.position="absolute";
+wrongDiv.style.top="500px";
 document.body.appendChild(wrongDiv);
 var wrongTitle = document.createElement('h2');
 wrongTitle.classList.add('wrongTitle');
@@ -45,7 +47,7 @@ wrongDiv.appendChild(wrongTitle);
     dash.style.width="30px";
     dash.classList="dashWord";
     dash.id="dash";
-    dash.style.height="50px";
+    dash.style.height="25px";
     
     // dash.style.marginTop="100px";
   
@@ -69,9 +71,11 @@ document.body.addEventListener("keydown",function(e){
    for(var j=0;j<splitWords.length;j++){
       if(splitWords[j]===e.key){
          letters[j].innerHTML=e.key;
-       
+
+        
       }
    }
+  
 
     }  
       else{
@@ -79,6 +83,10 @@ document.body.addEventListener("keydown",function(e){
          wrongLetterSpan.classList.add('wrongLetterSpan')
          wrongLetterSpan.innerHTML = e.key;
          wrongDiv.appendChild(wrongLetterSpan);
+         // wrongLetterSpan.style.position= 'absolute';
+         // wrongLetterSpan.style.top= '470px';
+         // wrongLetterSpan.style.left= '800px';
+         // wrongLetterSpan.style.marginLeft= '5px';
       }
   
    
