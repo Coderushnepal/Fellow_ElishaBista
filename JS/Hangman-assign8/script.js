@@ -19,11 +19,13 @@ title.appendChild(subtitle);
 
 
 var words=["January","Sunday","Mango","Rainy","Hello","CSIT","Science","Winter","Corona","Nepal","Elisha","Neha"];
- var splitWords= words[Math.floor(Math.random() * words.length)];
+ var splitWords= words[Math.floor(Math.random() * words.length)].toLowerCase();
+
 //wrong  letters display
 var wrongDiv=document.createElement("div");
 wrongDiv.classList.add("wrongDiv");
 wrongDiv.style.position="absolute";
+wrongDiv.style.fontWeight= 'bold';
 wrongDiv.style.top="500px";
 document.body.appendChild(wrongDiv);
 var wrongTitle = document.createElement('h2');
@@ -32,10 +34,10 @@ wrongTitle.innerHTML = 'Wrong Letters';
 wrongTitle.style.color = 'white';
 wrongTitle.style.fontWeight= 'bold';
 wrongTitle.style.position= 'absolute';
-wrongTitle.style.top= '450px';
+wrongTitle.style.top= '480px';
 wrongTitle.style.left= '900px';
 
-wrongDiv.appendChild(wrongTitle);
+document.body.appendChild(wrongTitle);
 
 
 
@@ -71,26 +73,42 @@ document.body.addEventListener("keydown",function(e){
    for(var j=0;j<splitWords.length;j++){
       if(splitWords[j]===e.key){
          letters[j].innerHTML=e.key;
+       
 
         
       }
+     
    }
+  
   
 
     }  
       else{
+         
          var wrongLetterSpan = document.createElement('span');
          wrongLetterSpan.classList.add('wrongLetterSpan')
          wrongLetterSpan.innerHTML = e.key;
          wrongDiv.appendChild(wrongLetterSpan);
-         // wrongLetterSpan.style.position= 'absolute';
-         // wrongLetterSpan.style.top= '470px';
-         // wrongLetterSpan.style.left= '800px';
-         // wrongLetterSpan.style.marginLeft= '5px';
+         displayFigureParts();
+         var guessedLetters=[];
+         if(e.key== guessedLetters){
+            displayAlreadyGuessed(letter);
+         }
+         // // var k=0;
+         // function displayFigureParts(){
+         //    figureParts[j].style.visibility="visible";
+         //    j++;
+         // }
+         // displayFigureParts();
+
+      
+        
       }
   
    
  
    
 });
+
+//to display parts;
 
