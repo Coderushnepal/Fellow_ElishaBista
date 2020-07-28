@@ -16,10 +16,29 @@ subtitle.innerHTML="Find the hidden word-Enter a letter";
 title.appendChild(subtitle);
 
 
+
+
 var words=["January","Sunday","Mango","Rainy","Hello","CSIT","Science","Winter","Corona","Nepal","Elisha","Neha"];
  var splitWords= words[Math.floor(Math.random() * words.length)];
-//  console.log(splitWords);
-//For each words...creating a dash section.
+//wrong  letters display
+var wrongDiv=document.createElement("div");
+wrongDiv.classList.add("wrongDiv");
+document.body.appendChild(wrongDiv);
+var wrongTitle = document.createElement('h2');
+wrongTitle.classList.add('wrongTitle');
+wrongTitle.innerHTML = 'Wrong Letters';
+wrongTitle.style.color = 'white';
+wrongTitle.style.fontWeight= 'bold';
+wrongTitle.style.position= 'absolute';
+wrongTitle.style.top= '450px';
+wrongTitle.style.left= '900px';
+
+wrongDiv.appendChild(wrongTitle);
+
+
+
+
+
  for(var i=0;i<splitWords.length;i++){
     var dash=document.createElement("span");
     dash.style.borderBottom="5px solid #fff";
@@ -44,32 +63,26 @@ var words=["January","Sunday","Mango","Rainy","Hello","CSIT","Science","Winter",
 //  var guess=prompt("Guess a letter");
 var letters = document.querySelectorAll('.dashWord');
 document.body.addEventListener("keydown",function(e){
-
+   if (splitWords.includes(e.key)){
    // if(e.target.id=="dash")
 
    for(var j=0;j<splitWords.length;j++){
       if(splitWords[j]===e.key){
          letters[j].innerHTML=e.key;
-      }
-      else{
-
+       
       }
    }
-   // if(guess==null){
-   //    break;
-   // }
-   // else if(guess.length!==1){
-   //    alert("please Enter a single letter");
-   // }
-   // else{
-   //    for(var j=0;j<splitWords.length;j++){
-   //       //If the letter player guess is in the word at that point or index
-   //       if(splitWords[j]===guess){
-   //          dashWord[j]=guess;
-   //         //Substracts one letter form the remaining letter
-   //         remainingLetters--; 
-   //       }
-   //    }
-   // }
+
+    }  
+      else{
+         var wrongLetterSpan = document.createElement('span');
+         wrongLetterSpan.classList.add('wrongLetterSpan')
+         wrongLetterSpan.innerHTML = e.key;
+         wrongDiv.appendChild(wrongLetterSpan);
+      }
+  
+   
+ 
    
 });
+
