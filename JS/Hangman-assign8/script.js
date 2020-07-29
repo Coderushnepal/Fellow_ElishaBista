@@ -104,7 +104,7 @@ lostValue.style.textAlign="center";
 lostBox.appendChild(lostValue);
 var button1=document.createElement("button");
 button1.innerHTML="Play again";
-button1.id="button";
+button1.id="buttons";
 button1.style.marginLeft="52px";
 // button1.style.border="2px solid blue";
 lostBox.appendChild(button1);
@@ -160,7 +160,8 @@ document.body.addEventListener("keydown",function(e){
     if(!wrongLetters.includes(e.key)){
      
        wrongLetters.push(e.key);
-      //  wrongLetters.push(wrongDiv);
+     
+   
      
     }
     else{
@@ -180,8 +181,13 @@ document.body.addEventListener("keydown",function(e){
        
    }
 });
-var button=document.getElementById("button");
-button.addEventListener("click",function(e){
+// for win button
+ button.addEventListener("click",function(e){
+   window.location.reload();
+
+})
+//For lost button
+buttons.addEventListener("click",function(e){
    window.location.reload();
 
 })
