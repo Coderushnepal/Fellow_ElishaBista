@@ -40,8 +40,76 @@ wrongTitle.style.left= '900px';
 document.body.appendChild(wrongTitle);
 
 
+//div for message
+var  alert=document.createElement("div");
+alert.classList.add("message");
+alert.style.backgroundColor="#fff";
+alert.style.color="#000";
+alert.style.height="100px";
+alert.style.width="200px";
+alert.style.borderRadius="5px";
+alert.style.visibility="hidden";
+document.body.appendChild(alert);
+//for innerhtml in message
+var notification = document.createElement("h3");
 
+notification.innerHTML = "Already guessed";
+notification.style.textAlign = "center";
+alert.appendChild(notification);
 
+//for winbox
+var winbox=document.createElement("div");
+winbox.style.backgroundColor="#fff";
+winbox.style.height="127px";
+winbox.style.visibility="hidden";
+winbox.id="box1";
+winbox.style.width="200px";
+winbox.style.position="absolute";
+winbox.style.top="216px";
+winbox.classList.add("won");
+document.body.appendChild(winbox);
+//For the inner text of winbox
+var winValue=document.createElement("h3");
+winValue.innerHTML="Congrats,You won the game";
+winValue.style.color="#000";
+winValue.style.color="#000";
+winValue.style.textAlign="center";
+winbox.appendChild(winValue);
+
+//For button
+var button1=document.createElement("button");
+button1.innerHTML="Play again";
+button1.style.marginLeft="52px";
+button1.id="button";
+winbox.appendChild(button1);
+
+//For lost box
+
+var lostBox=document.createElement("div");
+lostBox.style.backgroundColor="#fff";
+lostBox.style.height="105px";
+lostBox.style.visibility="hidden";
+lostBox.id="box2";
+lostBox.style.width="200px";
+lostBox.style.position="absolute";
+lostBox.style.top="216px";
+lostBox.classList.add("loss");
+document.body.appendChild(lostBox);
+
+var lostValue=document.createElement("h3");
+lostValue.innerHTML="Sorry,You lost";
+lostValue.style.color="#000";
+lostValue.style.color="#000";
+lostValue.style.textAlign="center";
+lostBox.appendChild(lostValue);
+var button1=document.createElement("button");
+button1.innerHTML="Play again";
+button1.id="button";
+button1.style.marginLeft="52px";
+// button1.style.border="2px solid blue";
+lostBox.appendChild(button1);
+//-------------------------------------------------------------
+var guessedLetters=[];
 
  for(var i=0;i<splitWords.length;i++){
     var dash=document.createElement("span");
@@ -58,57 +126,63 @@ document.body.appendChild(wrongTitle);
    box.appendChild(dash);
   
 
- }
+}
 
-//  var remainingLetters=word.length;
-//  while(remainingLetters>0){
-//     alert(dashWord.join(" "));
-//  }
-//  var guess=prompt("Guess a letter");
+var wrongLetters=[];
 var letters = document.querySelectorAll('.dashWord');
 document.body.addEventListener("keydown",function(e){
-   if (splitWords.includes(e.key)){
-   // if(e.target.id=="dash")
+  if (splitWords.includes(e.key)){
+    if(guessedLetters.includes(e.key)){
+       alert.style.visibility="visible";
+      setTimeout(()=>{
+         alert.style.visibility="hidden"; 
+      },1000);
+    }
 
-   for(var j=0;j<splitWords.length;j++){
-      if(splitWords[j]===e.key){
-         letters[j].innerHTML=e.key;
-       
-
-        
+      for(var j=0;j<splitWords.length;j++){
+         if(splitWords[j]===e.key){
+            guessedLetters.push(e.key);
+            letters[j].innerHTML=e.key; 
+            
+            
+      if (guessedLetters.length === splitWords.length) {
+               var winBox = document.getElementById("box1");
+           
+               winBox.style.visibility = "visible";
+         }     
       }
+   } 
+} 
+   else{         
+      displayFigureParts();
+      var wrongLetterSpan = document.createElement('span');
+      wrongLetterSpan.classList.add('wrongLetterSpan')
+    if(!wrongLetters.includes(e.key)){
      
-   }
+       wrongLetters.push(e.key);
+      //  wrongLetters.push(wrongDiv);
+     
+    }
+    else{
+       alert.style.visibility="visible";
+       setTimeout(()=>{
+         alert.style.visibility="hidden";
+       },1000)
+    }
+    if (wrongLetters.length === 6) {
+    
+    var lostBox= document.getElementById("box2");
   
+      lostBox.style.visibility = "visible";
+    }
   
-
-    }  
-      else{
-         
-         var wrongLetterSpan = document.createElement('span');
-         wrongLetterSpan.classList.add('wrongLetterSpan')
-         wrongLetterSpan.innerHTML = e.key;
-         wrongDiv.appendChild(wrongLetterSpan);
-         displayFigureParts();
-         var guessedLetters=[];
-         if(e.key== guessedLetters){
-            displayAlreadyGuessed(letter);
-         }
-         // // var k=0;
-         // function displayFigureParts(){
-         //    figureParts[j].style.visibility="visible";
-         //    j++;
-         // }
-         // displayFigureParts();
-
       
-        
-      }
-  
-   
- 
-   
+       
+   }
 });
+var button=document.getElementById("button");
+button.addEventListener("click",function(e){
+   window.location.reload();
 
-//to display parts;
+})
 

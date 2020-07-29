@@ -34,5 +34,11 @@ body {
 .figure-part{
   visibility: hidden;
 }
+.box{
+
+    position: absolute;
+    top: 404px;
+}
+
 
 
