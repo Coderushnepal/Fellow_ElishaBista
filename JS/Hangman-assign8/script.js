@@ -127,11 +127,16 @@ var guessedLetters=[];
   
 
 }
+<<<<<<< HEAD
 var wrongDiv=document.getElementsByClassName(wrongDiv);
 var wrongLetters=[];
 var wrongGuess = document.createElement("span");
 wrongGuess.id="wrong-letter";
 wrongTitle.appendChild(wrongGuess);
+=======
+
+var wrongLetters=[];
+>>>>>>> 7e0131def26865fe0dc2637d29b98995ad89c085
 var letters = document.querySelectorAll('.dashWord');
 document.body.addEventListener("keydown",function(e){
   if (splitWords.includes(e.key)){
@@ -158,6 +163,7 @@ document.body.addEventListener("keydown",function(e){
 } 
    else{         
       displayFigureParts();
+<<<<<<< HEAD
      
     
       wrongGuess = document.getElementById("wrong-letter");
@@ -167,6 +173,14 @@ document.body.addEventListener("keydown",function(e){
      console.log(wrongLetters);
   
 
+=======
+      var wrongLetterSpan = document.createElement('span');
+      wrongLetterSpan.classList.add('wrongLetterSpan')
+    if(!wrongLetters.includes(e.key)){
+     
+       wrongLetters.push(e.key);
+     
+>>>>>>> 7e0131def26865fe0dc2637d29b98995ad89c085
    
      
     }
@@ -182,7 +196,11 @@ document.body.addEventListener("keydown",function(e){
   
       lostBox.style.visibility = "visible";
     }
+<<<<<<< HEAD
     
+=======
+  
+>>>>>>> 7e0131def26865fe0dc2637d29b98995ad89c085
       
        
    }
