@@ -41,7 +41,7 @@ function render(x){
     }
   }
   render(5); 
-
+  let arr1 =Object.entries(js);
   
  
 
@@ -57,9 +57,9 @@ function censor(str) {
     }
   }
   
-  return  words.join(' ');
+  console.log(words.join(' '));
 }
-console.log (censor(" This is coding"));
+censor(" This is coding");
 
 
 
@@ -71,7 +71,7 @@ function identicalFilter(arr){
   for(let i=0; i<arr.length; i++){
     let repetation= new Set(arr[i]);
     if(repetation.size===1){
-      identical[k++] = arr[i];
+      identical[k++] = arr[i];  
     }
   }
   return identical;

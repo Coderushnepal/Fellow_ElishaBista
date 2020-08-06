@@ -13,6 +13,8 @@ btn.addEventListener("click", function(){
 
     box.appendChild(ball);
 });
+
+
 document.getElementById("box").addEventListener("click", function(e){
     if(e.target.className=="circle")
     e.target.className = "bouncy circle";
