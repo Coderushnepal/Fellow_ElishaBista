@@ -2,28 +2,26 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import User from './Component/user';
+import  EnhancedRedBull from './Component/user'
 
 function App() {
-  nameList=[
-    Neha,
-    Elisha,
-    Srijana,
-    Sindhu,
-    Bisikha,
-    Kirtee,
-    Kirtika,
-    Trijha,
-    Kusum
+  const names=[
+    "Neha",
+    "Elisha",
+    "Srijana",
+    "Sindhu",
+    "Bisikha",
+    "Kirtee",
+    "Kirtika",
+    "Trijha",
+    "Kusum"
 
 ]
   return (
-    <div>
-   const xyz=nameList.map(name=>{
-     return  console.log(name);
-   })
-     
-  
-   <User />
+    <div className="App">
+    
+    <h1> {names.map((name)=>(<  EnhancedRedBull key={name} name={name}/>))}</h1>
+    
     </div>
   );
 }
