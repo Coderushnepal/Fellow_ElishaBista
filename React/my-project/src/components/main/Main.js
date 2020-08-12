@@ -3,6 +3,7 @@ import BeerGrid from './beers/BeerGrid';
 const Main=()=>(
   <div className="wrapper">
       <BeerGrid />
+
   </div>
       
 

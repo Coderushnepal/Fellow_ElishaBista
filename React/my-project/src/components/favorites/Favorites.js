@@ -4,7 +4,9 @@ class Favorites extends Component{
     render(){
         return(
             <div className="wrapper">
-                <Header />
+           
+            <Header />
+              nknkl
             </div>
         )
     }

@@ -3,7 +3,7 @@ import {BrowserRouter,Switch,Route} from "react-router-dom";
 import * as routes from "../constants/routes";
 import history from "../utils/History";
 import  Main from './main';
-import Favorites from './favorites';
+import Favorites from './favorites/Favorites';
 
 
 
