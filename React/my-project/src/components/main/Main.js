@@ -1,7 +1,11 @@
 import React from 'react';
+import BeerGrid from './beers/BeerGrid';
 const Main=()=>(
-    <div className="wrapper">
-        <h2>I am the main router</h2>
-    </div>
+  <div className="wrapper">
+      <BeerGrid />
+  </div>
+      
+
+  
 );
 export default Main;

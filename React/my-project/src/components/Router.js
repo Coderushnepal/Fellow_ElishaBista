@@ -1,17 +1,23 @@
 import React from 'react';
 import {BrowserRouter,Switch,Route} from "react-router-dom";
-import history from "../utilis/history";
+import * as routes from "../constants/routes";
+import history from "../utils/History";
 import  Main from './main';
-// import * as routes from '../constants/routes';
-const Test=()=>(
-<h2>I am a test</h2>
-);
+import Favorites from './favorites';
+
+
+
 const Router=()=>(
    <BrowserRouter history={history}>
        <Switch>
-         <Route exact path="/" component={Main}></Route>
-         <Route exact path="/test" component={Test}></Route>
+         <Route  path={routes.HOME} component={ Main}></Route>
+         <Route  path={routes.FAVORITES} component={ Favorites}></Route>
+       
        </Switch>
    </BrowserRouter>
 );
-export default  Router;
+export default Router;
+
+
+
+

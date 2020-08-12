@@ -1,2 +1,2 @@
  export const HOME="/";
-// export const ABC="/abc"; 
+export const FAVORITES="/favorites"; 
