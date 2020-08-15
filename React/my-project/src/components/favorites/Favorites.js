@@ -6,7 +6,8 @@ class Favorites extends Component{
             <div className="wrapper">
            
             <Header />
-              nknkl
+            
+
             </div>
         )
     }
