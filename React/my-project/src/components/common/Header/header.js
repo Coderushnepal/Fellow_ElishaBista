@@ -41,7 +41,8 @@ this.setState({
                     <h1>The Beer Bank</h1>
                     <span>Find Your Favourite Beer here.</span>
                     <form onSubmit={this.search}>
-                        <input type="search" placeholder="Search Beer Name" value={this.state.searchText} onChange={this.handleTextChange}></input>
+                        <input type="search" placeholder="Search Beer Name" value={this.state.searchText}
+                         onChange={this.handleTextChange}></input>
                     </form>
                 </div>
              </div>

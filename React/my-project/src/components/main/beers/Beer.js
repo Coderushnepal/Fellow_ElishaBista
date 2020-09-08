@@ -1,12 +1,13 @@
 import React,{Component,Fragment} from "react";
 import BeerModal from './BeerModal';
 import PropTypes from "prop-types";
+import {dummyBeersData as favorites} from "../../../constants/dummyData";
 class Beer extends Component{
     constructor(props){
         super(props)
         this.state={
           showModal:false,
-          isFavorite:false,
+         
         };
     }
     handleModalOpen=()=>{
@@ -20,20 +21,21 @@ class Beer extends Component{
       })
     };
     render(){
-      const {isFavorite, showModal}=this.state;
+      const { showModal}=this.state;
        const {id,name,description,image_url}=this.props.info;
+       const beerIndex=favorites.findIndex((beer)=>beer.id===id)
         return(
           <Fragment>
-          {showModal?(
+          {showModal&&(
           <BeerModal 
            show={showModal}
             handleClose={this.handleModalClose}
             beerId={id} 
-            />):null  } 
+            />) } 
             <div className="card">
 
-          <span  className={`favorite$( isFavorite?"active":"")`}>
-            <i className="fa fa-star"/>
+          <span  className={`favorite $(beerIndex >-1?"active":"")`}>
+            <i className={`${beerIndex > -1?"fa": "far"}fa-star`}/>
           </span>
        <div className="card__imgcontainer" style={{backgroundImage:`url(${image_url})`}}></div>
               <h2 onClick={ this.handleModalOpen}>{name}</h2>
