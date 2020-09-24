@@ -1,6 +1,7 @@
 const express =require('express');//Using the express
 const socketio =require('socket.io');//using the socket.io
 const http =require('http');
+const cors=require('cors');
 const {   addUser,removeUser,getUser,getUsersInRoom  }  =require('./users.js');
   
 const PORT=process.env.PORT ||5000 ;//specifying the port 
@@ -43,5 +44,6 @@ const router =require('./router');
      })
  });
  app.use(router);
+ app.use(cors());
 
  server.listen(PORT,()=>console.log(`server has started on port ${PORT}`));
